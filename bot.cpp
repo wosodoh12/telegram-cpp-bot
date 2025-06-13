@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 using json = nlohmann::json;
-std::string BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN";
+std::string BOT_TOKEN = "7938255031:AAFTgaIhwkLIABcK4c-kmjIxI0DWwdWeX1o";
 std::string BASE_URL = "https://api.telegram.org/bot" + BOT_TOKEN + "/";
 
 sqlite3 *db;
