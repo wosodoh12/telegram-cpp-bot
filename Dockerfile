@@ -1,15 +1,11 @@
 
-FROM ubuntu:20.04
+FROM gcc:latest
 
-RUN apt update && apt install -y \
+RUN apt update && apt install -y curl libcurl4-openssl-dev sqlite3 libsqlite3-dev
 
-    g++ cmake libcurl4-openssl-dev libsqlite3-dev nlohmann-json3-dev \
-
-    && rm -rf /var/lib/apt/lists/*
-
+COPY . /app
 WORKDIR /app
-COPY . .
 
-RUN cmake . && make
+RUN g++ -std=c++17 -o bot bot.cpp -lcurl -lsqlite3
 
 CMD ["./bot"]
